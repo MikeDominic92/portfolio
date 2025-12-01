@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #00ff00;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-mono: "Courier New", Courier, monospace;
+
+  --color-terminal-green: #39FF14;
+  --color-cyber-black: #0a0a0a;
+  --color-cyber-purple: #39FF14;
+  --color-cyber-white: #FFFFFF;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-mono);
+}
+
+.terminal-window {
+  background-color: #000;
+  border: 1px solid #333;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.terminal-header {
+  background-color: #333;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: #ff5f56;
+}
+
+.yellow {
+  background-color: #ffbd2e;
+}
+
+.green {
+  background-color: #27c93f;
+}
+
+.terminal-body {
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 18px;
+  background-color: #00ff00;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Leaflet Map Customization */
+.leaflet-container {
+  background: #000 !important;
+  font-family: 'Courier New', Courier, monospace !important;
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+  background: #000;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  border-radius: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+.custom-popup .leaflet-popup-tip {
+  background: #000;
+  border: 1px solid #00ff00;
+}
+
+.custom-popup .leaflet-popup-close-button {
+  color: #00ff00 !important;
+}

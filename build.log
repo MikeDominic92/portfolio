@@ -1,0 +1,24 @@
+
+> portfolio@0.1.0 build
+> next build
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   Γû▓ Next.js 16.0.3 (Turbopack)
+
+   Creating an optimized production build ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ Γ£ô Compiled successfully in 5.3s
+   Running TypeScript ...
+Failed to compile.
+
+./components/portfolio/SecuritySphere.tsx:641:105
+Type error: 'EffectComposer' components don't accept text as child elements. Text in JSX has the type 'string', but the expected type of 'children' is 'Element | Element[]'.
+
+  639 |
+  640 |             <EffectComposer>
+> 641 |                 <Bloom luminanceThreshold={0.2} luminanceSmoothing={0.9} height={300} intensity={0.5} /> {/* Reduced intensity */}
+      |                                                                                                         ^
+  642 |                 <Noise opacity={0.02} /> {/* Reduced opacity */}
+  643 |                 <ChromaticAberration offset={new THREE.Vector2(0.001, 0.001)} /> {/* Reduced offset */}
+  644 |             </EffectComposer>
+Next.js build worker exited with code: 1 and signal: null
