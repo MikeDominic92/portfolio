@@ -70,7 +70,7 @@ const Hero = () => {
                                 </p>
                                 <div className="pt-4">
                                     <a
-                                        href="/resume.html"
+                                        href="/resume.pdf"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-2 px-6 py-3 bg-terminal-green/10 border border-terminal-green/50 rounded text-terminal-green font-mono text-sm tracking-wider hover:bg-terminal-green/20 transition-all group"

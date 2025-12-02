@@ -181,7 +181,7 @@ const Terminal = () => {
             case 'whoami':
                 output = (
                     <div className="text-white">
-                        <p>User: <span className="text-terminal-green font-bold">Jae (IAM Engineer)</span></p>
+                        <p>User: <span className="text-terminal-green font-bold">Jae (Cybersecurity Engineer)</span></p>
                         <p>Role: Security Architect & Identity Specialist</p>
                         <p>Mission: Securing digital identities through Zero Trust principles.</p>
                     </div>

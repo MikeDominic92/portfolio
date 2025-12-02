@@ -64,7 +64,7 @@ const About = () => {
                             </div>
 
                             <div className="p-6 font-mono text-sm md:text-base space-y-6 relative">
-                                <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid.png')] opacity-[0.02] pointer-events-none"></div>
+                                <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
 
                                 {/* Python Query Simulation */}
                                 <div className="space-y-4">

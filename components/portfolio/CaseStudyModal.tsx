@@ -69,7 +69,7 @@ const CaseStudyModal = ({ isOpen, onClose, project }: CaseStudyModalProps) => {
                                         System Architecture
                                     </h3>
                                     <div className="bg-black/50 border border-white/10 rounded-lg p-8 relative overflow-hidden">
-                                        <div className="absolute inset-0 bg-[url('/grid.png')] opacity-10 pointer-events-none"></div>
+                                        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] opacity-10 pointer-events-none"></div>
 
                                         {/* Simplified Flow Diagram */}
                                         <div className="flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
