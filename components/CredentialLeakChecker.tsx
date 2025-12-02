@@ -17,7 +17,7 @@ export default function CredentialLeakChecker() {
         setTimeout(() => {
             // Mock logic: if email contains "admin" or "test", show breaches. Else clean.
             if (email.toLowerCase().includes("admin") || email.toLowerCase().includes("test") || email.toLowerCase().includes("user")) {
-                setBreaches(["Adobe (2013)", "LinkedIn (2016)", "Dropbox (2012)", "Canva (2019)"]);
+                setBreaches(["Adobe (2013)", "Equifax (2017)", "Dropbox (2012)", "Canva (2019)"]);
             } else {
                 setBreaches([]);
             }

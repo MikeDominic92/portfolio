@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github, Send, Terminal, Lock, CheckCircle, Loader2 } from 'lucide-react';
+import { Mail, Github, Send, Terminal, Lock, CheckCircle, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 import { useHover } from '../context/HoverContext';
 
@@ -120,21 +120,7 @@ const Contact = () => {
                                     </div>
                                 </div>
 
-                                <div className="group flex items-start gap-4">
-                                    <div className="p-3 bg-white/5 border border-white/10 rounded-sm text-terminal-green group-hover:text-hacker-cyan group-hover:border-hacker-cyan/50 transition-all">
-                                        <Linkedin className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <p className="text-xs text-white mb-1">NETWORK_NODE</p>
-                                        <a href="https://linkedin.com/in/mikedominic" target="_blank" rel="noopener noreferrer" className="text-white hover:text-terminal-green transition-colors text-sm">
-                                            linkedin.com/in/mikedominic
-                                        </a>
-                                        <div className="text-[10px] text-terminal-green mt-1 flex items-center gap-1">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-terminal-green animate-pulse"></div>
-                                            CONNECTED
-                                        </div>
-                                    </div>
-                                </div>
+
 
                                 <div className="group flex items-start gap-4">
                                     <div className="p-3 bg-white/5 border border-white/10 rounded-sm text-terminal-green group-hover:text-hacker-cyan group-hover:border-hacker-cyan/50 transition-all">
@@ -142,8 +128,8 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <p className="text-xs text-white mb-1">REPO_ACCESS</p>
-                                        <a href="https://github.com/mikedominic" target="_blank" rel="noopener noreferrer" className="text-white hover:text-terminal-green transition-colors text-sm">
-                                            github.com/mikedominic
+                                        <a href="https://github.com/MikeDominic92" target="_blank" rel="noopener noreferrer" className="text-white hover:text-terminal-green transition-colors text-sm">
+                                            github.com/MikeDominic92
                                         </a>
                                         <div className="text-[10px] text-terminal-green mt-1 flex items-center gap-1">
                                             <div className="w-1.5 h-1.5 rounded-full bg-terminal-green animate-pulse"></div>

@@ -12,7 +12,7 @@ const Projects = () => {
 
     const projects = [
         {
-            title: "Zero Trust Gatekeeper",
+            title: "ZeroTrust-IAM-Analyzer",
             category: "Identity Security",
             status: "DEPLOYED",
             description: "Deployed internal application behind Google Cloud IAP with Context-Aware Access policies. Configured device trust levels using Endpoint Verification, geo-location restrictions via Access Context Manager, and integrated with Cloud Identity for group-based access control.",
@@ -26,7 +26,7 @@ const Projects = () => {
                 "Internal App (Cloud Run)"
             ],
             tech: ["GCP IAP", "Context-Aware Access", "Cloud Identity", "Python"],
-            githubUrl: "https://github.com/mikedominic/zero-trust-gatekeeper"
+            githubUrl: "https://github.com/MikeDominic92/ZeroTrust-IAM-Analyzer"
         },
         {
             title: "IAM Immune System",
@@ -43,7 +43,7 @@ const Projects = () => {
                 "Slack Notification"
             ],
             tech: ["Python", "Eventarc", "Cloud Functions", "Vertex AI"],
-            githubUrl: "https://github.com/mikedominic/iam-immune-system"
+            githubUrl: "https://github.com/MikeDominic92/iam-immune-system"
         },
         {
             title: "Keyless Kingdom",
@@ -60,7 +60,7 @@ const Projects = () => {
                 "Terraform Apply"
             ],
             tech: ["OIDC", "GitHub Actions", "Terraform", "GCP"],
-            githubUrl: "https://github.com/mikedominic/keyless-kingdom"
+            githubUrl: "https://github.com/MikeDominic92/keyless-kingdom"
         },
         {
             title: "PAM Vault Lab",
@@ -77,7 +77,7 @@ const Projects = () => {
                 "Target System"
             ],
             tech: ["CyberArk", "HashiCorp Vault", "PAM"],
-            githubUrl: "https://github.com/mikedominic/pam-vault-lab"
+            githubUrl: "https://github.com/MikeDominic92/pam-vault-lab"
         },
         {
             title: "Okta SSO Hub",
@@ -94,7 +94,7 @@ const Projects = () => {
                 "Service Provider"
             ],
             tech: ["Okta", "SAML", "OIDC", "SCIM"],
-            githubUrl: "https://github.com/mikedominic/okta-sso-hub"
+            githubUrl: "https://github.com/MikeDominic92/okta-sso-hub"
         },
         {
             title: "AI Access Sentinel",
@@ -111,7 +111,7 @@ const Projects = () => {
                 "Logic App Block"
             ],
             tech: ["Python", "scikit-learn", "Azure AD", "Logic Apps"],
-            githubUrl: "https://github.com/mikedominic/ai-access-sentinel"
+            githubUrl: "https://github.com/MikeDominic92/ai-access-sentinel"
         }
     ];
 
@@ -140,9 +140,10 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group relative"
+                            className="group relative cursor-pointer"
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
+                            onDoubleClick={() => window.open(project.githubUrl, '_blank')}
                         >
                             <div className="absolute -inset-0.5 bg-gradient-to-r from-terminal-green/20 to-purple-500/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
 

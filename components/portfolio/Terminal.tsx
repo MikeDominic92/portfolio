@@ -203,7 +203,7 @@ const Terminal = () => {
                 output = (
                     <div className="text-white">
                         <p>Email: <a href="mailto:jae@example.com" className="text-terminal-green hover:underline">jae@example.com</a></p>
-                        <p>LinkedIn: <a href="#" className="text-terminal-green hover:underline">linkedin.com/in/jae</a></p>
+
                     </div>
                 );
                 break;
