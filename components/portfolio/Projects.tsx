@@ -46,10 +46,10 @@ const Projects = () => {
             tech: ["Python", "FastAPI", "AWS boto3", "GCP IAM", "React"],
             githubUrl: "https://github.com/MikeDominic92/ZeroTrust-IAM-Analyzer",
             screenshots: [
-                "https://raw.githubusercontent.com/MikeDominic92/ZeroTrust-IAM-Analyzer/master/docs/screenshots/dashboard_page_1764612726130.png",
-                "https://raw.githubusercontent.com/MikeDominic92/ZeroTrust-IAM-Analyzer/master/docs/screenshots/identity_page_1764612733500.png",
-                "https://raw.githubusercontent.com/MikeDominic92/ZeroTrust-IAM-Analyzer/master/docs/screenshots/risk_page_1764612751598.png",
-                "https://raw.githubusercontent.com/MikeDominic92/ZeroTrust-IAM-Analyzer/master/docs/screenshots/recommendations_page_1764612760211.png"
+                "https://raw.githubusercontent.com/MikeDominic92/ZeroTrust-IAM-Analyzer/master/docs/images/dashboard-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/ZeroTrust-IAM-Analyzer/master/docs/images/identity-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/ZeroTrust-IAM-Analyzer/master/docs/images/risk-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/ZeroTrust-IAM-Analyzer/master/docs/images/recommendations-new.png"
             ]
         },
         {
@@ -69,11 +69,11 @@ const Projects = () => {
             tech: ["Python", "GCP", "Terraform", "SailPoint IIQ", "ML"],
             githubUrl: "https://github.com/MikeDominic92/iam-immune-system",
             screenshots: [
-                "https://raw.githubusercontent.com/MikeDominic92/iam-immune-system/master/docs/screenshots/immune_dashboard_verification_1764616411409.png",
-                "https://raw.githubusercontent.com/MikeDominic92/iam-immune-system/master/docs/screenshots/detection_center_verification_1764616434845.png",
-                "https://raw.githubusercontent.com/MikeDominic92/iam-immune-system/master/docs/screenshots/remediation_console_verification_1764616456695.png",
-                "https://raw.githubusercontent.com/MikeDominic92/iam-immune-system/master/docs/screenshots/identity_monitor_verification_1764616478951.png",
-                "https://raw.githubusercontent.com/MikeDominic92/iam-immune-system/master/docs/screenshots/alert_management_verification_1764616502614.png"
+                "https://raw.githubusercontent.com/MikeDominic92/iam-immune-system/master/docs/images/immune-status-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/iam-immune-system/master/docs/images/immune-detection-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/iam-immune-system/master/docs/images/immune-remediation-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/iam-immune-system/master/docs/images/immune-identity-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/iam-immune-system/master/docs/images/immune-alerts-new.png"
             ]
         },
         {
@@ -93,11 +93,11 @@ const Projects = () => {
             tech: ["Python", "FastAPI", "Graph API", "Splunk HEC", "PowerShell"],
             githubUrl: "https://github.com/MikeDominic92/entra-id-governance",
             screenshots: [
-                "https://raw.githubusercontent.com/MikeDominic92/entra-id-governance/master/docs/screenshots/dashboard_verification_1764615323909.png",
-                "https://raw.githubusercontent.com/MikeDominic92/entra-id-governance/master/docs/screenshots/conditional_access_verification_1764615338655.png",
-                "https://raw.githubusercontent.com/MikeDominic92/entra-id-governance/master/docs/screenshots/pim_verification_1764615355559.png",
-                "https://raw.githubusercontent.com/MikeDominic92/entra-id-governance/master/docs/screenshots/access_reviews_verification_1764615372795.png",
-                "https://raw.githubusercontent.com/MikeDominic92/entra-id-governance/master/docs/screenshots/compliance_verification_1764615388733.png"
+                "https://raw.githubusercontent.com/MikeDominic92/entra-id-governance/master/docs/images/dashboard-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/entra-id-governance/master/docs/images/ca-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/entra-id-governance/master/docs/images/pim-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/entra-id-governance/master/docs/images/access-reviews-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/entra-id-governance/master/docs/images/compliance-new.png"
             ]
         },
         {
@@ -117,11 +117,11 @@ const Projects = () => {
             tech: ["Okta", "SAML", "OIDC", "SCIM", "Python", "React"],
             githubUrl: "https://github.com/MikeDominic92/okta-sso-hub",
             screenshots: [
-                "https://raw.githubusercontent.com/MikeDominic92/okta-sso-hub/master/docs/screenshots/okta_dashboard_1764620382675.png",
-                "https://raw.githubusercontent.com/MikeDominic92/okta-sso-hub/master/docs/screenshots/okta_apps_1764620414608.png",
-                "https://raw.githubusercontent.com/MikeDominic92/okta-sso-hub/master/docs/screenshots/okta_federation_1764620443193.png",
-                "https://raw.githubusercontent.com/MikeDominic92/okta-sso-hub/master/docs/screenshots/okta_security_1764620475111.png",
-                "https://raw.githubusercontent.com/MikeDominic92/okta-sso-hub/master/docs/screenshots/okta_provisioning_1764620505660.png"
+                "https://raw.githubusercontent.com/MikeDominic92/okta-sso-hub/master/docs/images/dashboard-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/okta-sso-hub/master/docs/images/applications-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/okta-sso-hub/master/docs/images/okta-federation-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/okta-sso-hub/master/docs/images/security-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/okta-sso-hub/master/docs/images/okta-provisioning-new.png"
             ]
         },
         {
@@ -141,11 +141,9 @@ const Projects = () => {
             tech: ["Python", "scikit-learn", "CrowdStrike Falcon", "FastAPI", "Streamlit"],
             githubUrl: "https://github.com/MikeDominic92/ai-access-sentinel",
             screenshots: [
-                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/sentinel_dashboard_1764609805498.png",
-                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/sentinel_decisions_1764609844410.png",
-                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/sentinel_analytics_1764609878554.png",
-                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/sentinel_threats_1764609911889.png",
-                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/sentinel_config_1764609943752.png"
+                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/images/dashboard-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/images/risk-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/images/roles-new.png"
             ]
         },
         {
@@ -165,17 +163,17 @@ const Projects = () => {
             tech: ["HashiCorp Vault", "AWS Secrets Manager", "Docker", "Python", "Ansible"],
             githubUrl: "https://github.com/MikeDominic92/pam-vault-lab",
             screenshots: [
-                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_dashboard_1764618915895.png",
-                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_secrets_1764618939082.png",
-                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_creds_1764618961178.png",
-                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_pki_1764618983762.png",
-                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_audit_1764619004996.png"
+                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/images/dashboard-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/images/secrets-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/images/vault-creds-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/images/pki-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/images/vault-audit-new.png"
             ]
         },
         {
             title: "Keyless Kingdom",
             category: "DevSecOps Zero Trust",
-            status: "PRODUCTION",
+            status: "v1.0",
             description: "Eliminated long-lived service account keys using Workload Identity Federation. GitHub Actions OIDC provider exchanges JWT tokens for short-lived GCP credentials. Terraform deploys infrastructure with zero secrets to manage.",
             challenge: "Managing long-lived Service Account JSON keys for CI/CD pipelines was a security nightmare. Keys were often leaked in git history or left on developer machines.",
             solution: "Eliminated long-lived keys entirely using Workload Identity Federation. GitHub Actions exchanges its OIDC token for short-lived Google Cloud access tokens. No secrets to manage or leak. Access granted based on specific repository and branch.",
@@ -189,11 +187,11 @@ const Projects = () => {
             tech: ["OIDC", "GitHub Actions", "Terraform", "GCP WIF"],
             githubUrl: "https://github.com/MikeDominic92/keyless-kingdom",
             screenshots: [
-                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/dashboard_1764617804714.png",
-                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/config_1764617824746.png",
-                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/workflow_1764617844598.png",
-                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/audit_1764617864177.png",
-                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/architecture_1764617886966.png"
+                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/images/federation-overview-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/images/provider-config-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/images/workflow-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/images/audit-new.png",
+                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/images/architecture-new.png"
             ]
         }
     ];
