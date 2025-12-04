@@ -30,20 +30,20 @@ const Projects = () => {
 
     const projects = [
         {
-            title: "ZeroTrust-IAM-Analyzer",
-            category: "Identity Security",
-            status: "DEPLOYED",
-            description: "Deployed internal application behind Google Cloud IAP with Context-Aware Access policies. Configured device trust levels using Endpoint Verification, geo-location restrictions via Access Context Manager, and integrated with Cloud Identity for group-based access control.",
-            challenge: "The organization needed to expose internal tools to remote employees without using a VPN, which was causing latency and support tickets. Traditional IP whitelisting was insufficient for a distributed workforce.",
-            solution: "Implemented a Zero Trust architecture using GCP IAP. We replaced the VPN with identity-based access control. Users authenticate via their corporate identity, and access is granted only if their device meets security posture checks (OS version, disk encryption) and they are in an allowed geographic region.",
+            title: "ZeroTrust IAM Analyzer",
+            category: "Multi-Cloud CIEM",
+            status: "v1.1",
+            description: "Enterprise CIEM platform analyzing cloud entitlements across GCP and AWS. Features AWS IAM Access Analyzer integration for external access detection, Zero Trust scoring, and least-privilege recommendations with ML-based risk quantification.",
+            challenge: "99% of cloud permissions granted are never used (Gartner 2024). Organizations struggle to visualize effective permissions across multiple clouds and detect privilege escalation paths before breaches occur.",
+            solution: "Built multi-cloud CIEM solution with AWS IAM Access Analyzer integration. Scans GCP IAM and AWS IAM to identify excessive permissions, external access exposure, and privilege escalation paths. Generates 0-100 risk scores with actionable remediation recommendations.",
             architecture: [
-                "User Request",
-                "Cloud Load Balancer",
-                "Identity-Aware Proxy (AuthZ)",
-                "Context-Aware Access (Policy)",
-                "Internal App (Cloud Run)"
+                "GCP Cloud IAM + AWS IAM Access Analyzer",
+                "FastAPI Analysis Engine",
+                "ML Risk Scorer (0-100)",
+                "React Dashboard",
+                "PostgreSQL + Compliance Reports"
             ],
-            tech: ["GCP IAP", "Context-Aware Access", "Cloud Identity", "Python"],
+            tech: ["Python", "FastAPI", "AWS boto3", "GCP IAM", "React"],
             githubUrl: "https://github.com/MikeDominic92/ZeroTrust-IAM-Analyzer",
             screenshots: [
                 "https://raw.githubusercontent.com/MikeDominic92/ZeroTrust-IAM-Analyzer/master/docs/screenshots/dashboard_page_1764612726130.png",
@@ -54,19 +54,19 @@ const Projects = () => {
         },
         {
             title: "IAM Immune System",
-            category: "Security Automation",
-            status: "ACTIVE",
-            description: "Built Python-based Cloud Function triggered by Eventarc that monitors for dangerous IAM changes and auto-reverts them within seconds. Integrated with Vertex AI for anomaly detection and predictive access risk scoring.",
-            challenge: "Developers were accidentally creating over-permissive IAM roles and public storage buckets in development environments, creating significant security risks that manual audits missed for days.",
-            solution: "Built an event-driven 'immune system'. When a high-risk IAM change event is logged in Cloud Audit Logs, Eventarc triggers a Cloud Function. This function analyzes the change against a policy baseline. If a violation is found (e.g., 'Storage Object Viewer' granted to 'allUsers'), it immediately reverts the change and notifies the security team via Slack.",
+            category: "Security Automation + IGA",
+            status: "v1.1",
+            description: "Event-driven security automation with SailPoint IdentityIQ integration. Monitors GCP IAM changes in real-time, auto-remediates threats using ML anomaly detection, and correlates with identity lifecycle events (Joiner/Mover/Leaver).",
+            challenge: "Cloud IAM changes happen faster than security teams can react. Manual review cannot detect threats in real-time or correlate with identity governance systems.",
+            solution: "Built event-driven 'immune system' with SailPoint IGA integration. Eventarc triggers Cloud Functions on IAM changes, Isolation Forest ML detects anomalies, and auto-remediation reverts dangerous changes within seconds. SailPoint webhooks correlate with lifecycle events.",
             architecture: [
-                "IAM Change Event",
-                "Cloud Audit Logs",
-                "Eventarc Trigger",
-                "Remediation Function",
-                "Slack Notification"
+                "GCP Eventarc + Cloud Audit Logs",
+                "Cloud Functions (Python)",
+                "Isolation Forest ML Anomaly Detection",
+                "SailPoint IdentityIQ Webhooks",
+                "Slack/Teams Alerting"
             ],
-            tech: ["Python", "Eventarc", "Cloud Functions", "Vertex AI"],
+            tech: ["Python", "GCP", "Terraform", "SailPoint IIQ", "ML"],
             githubUrl: "https://github.com/MikeDominic92/iam-immune-system",
             screenshots: [
                 "https://raw.githubusercontent.com/MikeDominic92/iam-immune-system/master/docs/screenshots/immune_dashboard_verification_1764616411409.png",
@@ -77,68 +77,44 @@ const Projects = () => {
             ]
         },
         {
-            title: "Keyless Kingdom",
-            category: "DevSecOps",
-            status: "PRODUCTION",
-            description: "Configured GitHub Actions OIDC provider with GCP Workload Identity Federation to exchange JWT tokens for short-lived service account credentials. Terraform deploys infrastructure without long-lived keys.",
-            challenge: "Managing long-lived Service Account JSON keys for CI/CD pipelines was a security nightmare. Keys were often leaked in git history or left rotating on developer machines.",
-            solution: "Eliminated long-lived keys entirely using Workload Identity Federation. GitHub Actions now exchanges its OIDC token for a short-lived Google Cloud access token. This means there are no secrets to manage or leak. Access is granted based on the specific GitHub repository and branch.",
+            title: "Entra ID Governance",
+            category: "Microsoft IAM + SIEM",
+            status: "v1.1",
+            description: "Microsoft Entra ID governance automation with Splunk SIEM integration. Analyzes Conditional Access policies, monitors PIM activations, automates Access Reviews, and forwards identity events to Splunk for SOC correlation.",
+            challenge: "Enterprise Microsoft environments accumulate 100+ Conditional Access policies with conflicts and gaps. SOC teams lack identity context in SIEM during incident response.",
+            solution: "Built governance toolkit with Splunk HEC integration. Analyzes CA policies for MFA gaps and conflicts, monitors PIM for standing access violations, automates Access Reviews at scale, and forwards all identity events to Splunk in CIM format for real-time SOC correlation.",
             architecture: [
-                "GitHub Action Trigger",
-                "OIDC Token Exchange",
-                "Workload Identity Pool",
-                "Short-lived Access Token",
-                "Terraform Apply"
+                "Microsoft Graph API + MSAL",
+                "CA Policy Analyzer",
+                "PIM Monitoring Engine",
+                "Splunk HEC Event Forwarder",
+                "React Governance Dashboard"
             ],
-            tech: ["OIDC", "GitHub Actions", "Terraform", "GCP"],
-            githubUrl: "https://github.com/MikeDominic92/keyless-kingdom",
+            tech: ["Python", "FastAPI", "Graph API", "Splunk HEC", "PowerShell"],
+            githubUrl: "https://github.com/MikeDominic92/entra-id-governance",
             screenshots: [
-                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/dashboard_1764617804714.png",
-                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/config_1764617824746.png",
-                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/workflow_1764617844598.png",
-                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/audit_1764617864177.png",
-                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/architecture_1764617886966.png"
-            ]
-        },
-        {
-            title: "PAM Vault Lab",
-            category: "Privileged Access Management",
-            status: "LAB",
-            description: "Built privileged access management lab using CyberArk and HashiCorp Vault to secure service accounts and admin credentials. Implemented credential rotation, session recording, and just-in-time access.",
-            challenge: "Demonstrating control over privileged credentials and auditing access to critical systems.",
-            solution: "Deployed a dual-vault architecture. CyberArk handles human privileged access with session recording, while HashiCorp Vault manages dynamic secrets for applications. Implemented automatic password rotation every 24 hours.",
-            architecture: [
-                "User Request",
-                "CyberArk PVWA",
-                "CPM (Rotation)",
-                "PSM (Session)",
-                "Target System"
-            ],
-            tech: ["CyberArk", "HashiCorp Vault", "PAM"],
-            githubUrl: "https://github.com/MikeDominic92/pam-vault-lab",
-            screenshots: [
-                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_dashboard_1764618915895.png",
-                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_secrets_1764618939082.png",
-                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_creds_1764618961178.png",
-                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_pki_1764618983762.png",
-                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_audit_1764619004996.png"
+                "https://raw.githubusercontent.com/MikeDominic92/entra-id-governance/master/docs/screenshots/dashboard_verification_1764615323909.png",
+                "https://raw.githubusercontent.com/MikeDominic92/entra-id-governance/master/docs/screenshots/conditional_access_verification_1764615338655.png",
+                "https://raw.githubusercontent.com/MikeDominic92/entra-id-governance/master/docs/screenshots/pim_verification_1764615355559.png",
+                "https://raw.githubusercontent.com/MikeDominic92/entra-id-governance/master/docs/screenshots/access_reviews_verification_1764615372795.png",
+                "https://raw.githubusercontent.com/MikeDominic92/entra-id-governance/master/docs/screenshots/compliance_verification_1764615388733.png"
             ]
         },
         {
             title: "Okta SSO Hub",
-            category: "Multi-App Federation",
-            status: "LAB",
-            description: "Configured Okta as central identity provider with SAML and OIDC integrations. Implemented SCIM provisioning for automatic user sync and adaptive MFA policies using Okta Workflows.",
-            challenge: "Unifying identity across disparate SaaS applications and enforcing consistent security policies.",
-            solution: "Centralized authentication via Okta. Configured SAML for legacy apps and OIDC for modern apps. Enabled SCIM to automatically provision/deprovision users in downstream apps based on AD group membership.",
+            category: "SSO + Workflows Automation",
+            status: "v1.1",
+            description: "Enterprise SSO platform with Okta Workflows automation. Implements SAML 2.0 and OIDC/OAuth 2.0 federation, SCIM 2.0 provisioning, and event-driven identity lifecycle automation using Okta Workflows API.",
+            challenge: "SSO implementation requires multiple protocols (SAML vs OIDC), provisioning takes days, and manual workflows slow down access requests. Organizations need hands-on protocol expertise.",
+            solution: "Built complete SSO hub with Okta Workflows integration. Flask SAML SP for enterprise apps, React OIDC SPA for modern apps, SCIM for automated provisioning, and Workflows API for event-driven lifecycle automation (user created, group change, password reset).",
             architecture: [
-                "User Login",
-                "Okta Auth Policy",
-                "MFA Challenge",
-                "SAML Assertion",
-                "Service Provider"
+                "Okta Universal Directory",
+                "SAML 2.0 + OIDC/OAuth 2.0",
+                "SCIM 2.0 Provisioning",
+                "Okta Workflows Engine",
+                "Flask SP + React SPA + Node API"
             ],
-            tech: ["Okta", "SAML", "OIDC", "SCIM"],
+            tech: ["Okta", "SAML", "OIDC", "SCIM", "Python", "React"],
             githubUrl: "https://github.com/MikeDominic92/okta-sso-hub",
             screenshots: [
                 "https://raw.githubusercontent.com/MikeDominic92/okta-sso-hub/master/docs/screenshots/okta_dashboard_1764620382675.png",
@@ -150,26 +126,74 @@ const Projects = () => {
         },
         {
             title: "AI Access Sentinel",
-            category: "ML-Powered Anomaly Detection",
-            status: "LAB",
-            description: "Built machine learning pipeline using Python and scikit-learn to detect anomalous access patterns in Azure AD sign-in logs. Integrated with Logic Apps for automated conditional access enforcement.",
-            challenge: "Static rules-based detection was missing subtle indicators of compromise in authentication logs.",
-            solution: "Developed an ML model to establish a baseline of 'normal' user behavior (location, time, device). Deviations trigger a Logic App that temporarily disables the user account and alerts the SOC.",
+            category: "ML-Powered IAM Decisions",
+            status: "v1.1",
+            description: "ML-powered access decision engine with CrowdStrike Falcon ITDR integration. Uses 6-factor risk scoring combining identity behavior, device posture, and threat intelligence to make intelligent approve/deny/step-up decisions.",
+            challenge: "Static RBAC cannot adapt to dynamic risk. 74% of breaches involve compromised credentials that pass traditional authentication checks.",
+            solution: "Built ML decision engine with CrowdStrike Falcon integration. 6-factor scoring evaluates: identity risk, device risk, network risk, behavior anomaly, resource sensitivity, and threat intelligence. CrowdStrike provides real-time identity threat context for step-up authentication decisions.",
             architecture: [
-                "Azure AD Logs",
-                "Event Hub",
-                "ML Model (Python)",
-                "Anomaly Score",
-                "Logic App Block"
+                "Access Request Ingestion",
+                "6-Factor ML Risk Engine",
+                "CrowdStrike Falcon ITDR API",
+                "Decision Engine (Approve/Deny/Step-up)",
+                "Streamlit Analytics Dashboard"
             ],
-            tech: ["Python", "scikit-learn", "Azure AD", "Logic Apps"],
+            tech: ["Python", "scikit-learn", "CrowdStrike Falcon", "FastAPI", "Streamlit"],
             githubUrl: "https://github.com/MikeDominic92/ai-access-sentinel",
             screenshots: [
-                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/anomalies_page_1764611111831.png",
-                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/risk_page_1764611125945.png",
-                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/roles_page_1764611139665.png",
-                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/predictions_page_after_1764611160549.png",
-                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/settings_page_1764611175580.png"
+                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/sentinel_dashboard_1764609805498.png",
+                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/sentinel_decisions_1764609844410.png",
+                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/sentinel_analytics_1764609878554.png",
+                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/sentinel_threats_1764609911889.png",
+                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/sentinel_config_1764609943752.png"
+            ]
+        },
+        {
+            title: "PAM Vault Lab",
+            category: "PAM + Cloud Secrets",
+            status: "v1.1",
+            description: "Enterprise PAM practice environment with AWS Secrets Manager sync. HashiCorp Vault for secrets management, dynamic credentials, password rotation, with bidirectional AWS cloud synchronization. Aligned with CyberArk PAM-DEF concepts.",
+            challenge: "CyberArk licensing costs $50K+ annually. PAM professionals need hands-on practice with enterprise patterns but lack affordable lab environments.",
+            solution: "Built production-ready PAM lab with AWS Secrets Manager integration. Vault KV v2 for secrets, Database Secrets Engine for dynamic credentials, rotation automation, and bidirectional sync to AWS Secrets Manager for hybrid cloud scenarios. Zero cost vs enterprise PAM.",
+            architecture: [
+                "HashiCorp Vault Server",
+                "Database Secrets Engine (PostgreSQL/MySQL)",
+                "AWS Secrets Manager Sync",
+                "Rotation Event Handler",
+                "Prometheus + Grafana Monitoring"
+            ],
+            tech: ["HashiCorp Vault", "AWS Secrets Manager", "Docker", "Python", "Ansible"],
+            githubUrl: "https://github.com/MikeDominic92/pam-vault-lab",
+            screenshots: [
+                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_dashboard_1764618915895.png",
+                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_secrets_1764618939082.png",
+                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_creds_1764618961178.png",
+                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_pki_1764618983762.png",
+                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_audit_1764619004996.png"
+            ]
+        },
+        {
+            title: "Keyless Kingdom",
+            category: "DevSecOps Zero Trust",
+            status: "PRODUCTION",
+            description: "Eliminated long-lived service account keys using Workload Identity Federation. GitHub Actions OIDC provider exchanges JWT tokens for short-lived GCP credentials. Terraform deploys infrastructure with zero secrets to manage.",
+            challenge: "Managing long-lived Service Account JSON keys for CI/CD pipelines was a security nightmare. Keys were often leaked in git history or left on developer machines.",
+            solution: "Eliminated long-lived keys entirely using Workload Identity Federation. GitHub Actions exchanges its OIDC token for short-lived Google Cloud access tokens. No secrets to manage or leak. Access granted based on specific repository and branch.",
+            architecture: [
+                "GitHub Action OIDC Token",
+                "GCP Workload Identity Pool",
+                "Token Exchange Service",
+                "Short-lived Access Token",
+                "Terraform Infrastructure Deploy"
+            ],
+            tech: ["OIDC", "GitHub Actions", "Terraform", "GCP WIF"],
+            githubUrl: "https://github.com/MikeDominic92/keyless-kingdom",
+            screenshots: [
+                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/dashboard_1764617804714.png",
+                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/config_1764617824746.png",
+                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/workflow_1764617844598.png",
+                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/audit_1764617864177.png",
+                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/architecture_1764617886966.png"
             ]
         }
     ];
@@ -271,7 +295,7 @@ const Projects = () => {
                                     </div>
 
                                     {/* Tech Stack */}
-                                    <div className="flex gap-2 mb-4">
+                                    <div className="flex flex-wrap gap-2 mb-4">
                                         {project.tech.map((tech, i) => (
                                             <span key={i} className="text-[10px] px-2 py-1 rounded bg-white/5 text-white/40 border border-white/5">
                                                 {tech}
