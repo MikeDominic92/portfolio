@@ -122,21 +122,6 @@ const Contact = () => {
 
 
 
-                                <div className="group flex items-start gap-4">
-                                    <div className="p-3 bg-white/5 border border-white/10 rounded-sm text-terminal-green group-hover:text-hacker-cyan group-hover:border-hacker-cyan/50 transition-all">
-                                        <Github className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <p className="text-xs text-white mb-1">REPO_ACCESS</p>
-                                        <a href="https://github.com/MikeDominic92" target="_blank" rel="noopener noreferrer" className="text-white hover:text-terminal-green transition-colors text-sm">
-                                            github.com/MikeDominic92
-                                        </a>
-                                        <div className="text-[10px] text-terminal-green mt-1 flex items-center gap-1">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-terminal-green animate-pulse"></div>
-                                            PUBLIC_KEY_AUTH
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </motion.div>

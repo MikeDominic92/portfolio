@@ -30,14 +30,14 @@ export default function PortfolioPage() {
             <Layout>
                 <Hero />
                 <About />
+                <Projects />
+                <Experience />
                 <div className="relative">
                     <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
                         <SecuritySphere />
                     </div>
                     <Skills />
                 </div>
-                <Projects />
-                <Experience />
                 <Contact />
             </Layout>
         </HoverProvider>

@@ -1,14 +1,32 @@
 "use client";
 
-import { motion } from 'framer-motion';
-import { Folder, GitBranch, Shield, Terminal, ExternalLink, Server } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Folder, GitBranch, Shield, Terminal, ExternalLink, Server, ImageIcon } from 'lucide-react';
 import { useHover } from '../context/HoverContext';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CaseStudyModal from './CaseStudyModal';
 
 const Projects = () => {
     const { setIsHovered } = useHover();
     const [selectedProject, setSelectedProject] = useState<any>(null);
+    const [hoveredProjectIndex, setHoveredProjectIndex] = useState<number | null>(null);
+    const [currentScreenshotIndex, setCurrentScreenshotIndex] = useState(0);
+
+    // Slideshow effect on hover
+    useEffect(() => {
+        let interval: NodeJS.Timeout;
+        if (hoveredProjectIndex !== null) {
+            interval = setInterval(() => {
+                setCurrentScreenshotIndex(prev => {
+                    const project = projects[hoveredProjectIndex];
+                    return (prev + 1) % (project.screenshots?.length || 1);
+                });
+            }, 2000);
+        } else {
+            setCurrentScreenshotIndex(0);
+        }
+        return () => clearInterval(interval);
+    }, [hoveredProjectIndex]);
 
     const projects = [
         {
@@ -26,7 +44,13 @@ const Projects = () => {
                 "Internal App (Cloud Run)"
             ],
             tech: ["GCP IAP", "Context-Aware Access", "Cloud Identity", "Python"],
-            githubUrl: "https://github.com/MikeDominic92/ZeroTrust-IAM-Analyzer"
+            githubUrl: "https://github.com/MikeDominic92/ZeroTrust-IAM-Analyzer",
+            screenshots: [
+                "https://raw.githubusercontent.com/MikeDominic92/ZeroTrust-IAM-Analyzer/master/docs/screenshots/dashboard_page_1764612726130.png",
+                "https://raw.githubusercontent.com/MikeDominic92/ZeroTrust-IAM-Analyzer/master/docs/screenshots/identity_page_1764612733500.png",
+                "https://raw.githubusercontent.com/MikeDominic92/ZeroTrust-IAM-Analyzer/master/docs/screenshots/risk_page_1764612751598.png",
+                "https://raw.githubusercontent.com/MikeDominic92/ZeroTrust-IAM-Analyzer/master/docs/screenshots/recommendations_page_1764612760211.png"
+            ]
         },
         {
             title: "IAM Immune System",
@@ -43,7 +67,14 @@ const Projects = () => {
                 "Slack Notification"
             ],
             tech: ["Python", "Eventarc", "Cloud Functions", "Vertex AI"],
-            githubUrl: "https://github.com/MikeDominic92/iam-immune-system"
+            githubUrl: "https://github.com/MikeDominic92/iam-immune-system",
+            screenshots: [
+                "https://raw.githubusercontent.com/MikeDominic92/iam-immune-system/master/docs/screenshots/immune_dashboard_verification_1764616411409.png",
+                "https://raw.githubusercontent.com/MikeDominic92/iam-immune-system/master/docs/screenshots/detection_center_verification_1764616434845.png",
+                "https://raw.githubusercontent.com/MikeDominic92/iam-immune-system/master/docs/screenshots/remediation_console_verification_1764616456695.png",
+                "https://raw.githubusercontent.com/MikeDominic92/iam-immune-system/master/docs/screenshots/identity_monitor_verification_1764616478951.png",
+                "https://raw.githubusercontent.com/MikeDominic92/iam-immune-system/master/docs/screenshots/alert_management_verification_1764616502614.png"
+            ]
         },
         {
             title: "Keyless Kingdom",
@@ -60,7 +91,14 @@ const Projects = () => {
                 "Terraform Apply"
             ],
             tech: ["OIDC", "GitHub Actions", "Terraform", "GCP"],
-            githubUrl: "https://github.com/MikeDominic92/keyless-kingdom"
+            githubUrl: "https://github.com/MikeDominic92/keyless-kingdom",
+            screenshots: [
+                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/dashboard_1764617804714.png",
+                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/config_1764617824746.png",
+                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/workflow_1764617844598.png",
+                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/audit_1764617864177.png",
+                "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/screenshots/architecture_1764617886966.png"
+            ]
         },
         {
             title: "PAM Vault Lab",
@@ -77,7 +115,14 @@ const Projects = () => {
                 "Target System"
             ],
             tech: ["CyberArk", "HashiCorp Vault", "PAM"],
-            githubUrl: "https://github.com/MikeDominic92/pam-vault-lab"
+            githubUrl: "https://github.com/MikeDominic92/pam-vault-lab",
+            screenshots: [
+                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_dashboard_1764618915895.png",
+                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_secrets_1764618939082.png",
+                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_creds_1764618961178.png",
+                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_pki_1764618983762.png",
+                "https://raw.githubusercontent.com/MikeDominic92/pam-vault-lab/master/docs/screenshots/vault_audit_1764619004996.png"
+            ]
         },
         {
             title: "Okta SSO Hub",
@@ -94,7 +139,14 @@ const Projects = () => {
                 "Service Provider"
             ],
             tech: ["Okta", "SAML", "OIDC", "SCIM"],
-            githubUrl: "https://github.com/MikeDominic92/okta-sso-hub"
+            githubUrl: "https://github.com/MikeDominic92/okta-sso-hub",
+            screenshots: [
+                "https://raw.githubusercontent.com/MikeDominic92/okta-sso-hub/master/docs/screenshots/okta_dashboard_1764620382675.png",
+                "https://raw.githubusercontent.com/MikeDominic92/okta-sso-hub/master/docs/screenshots/okta_apps_1764620414608.png",
+                "https://raw.githubusercontent.com/MikeDominic92/okta-sso-hub/master/docs/screenshots/okta_federation_1764620443193.png",
+                "https://raw.githubusercontent.com/MikeDominic92/okta-sso-hub/master/docs/screenshots/okta_security_1764620475111.png",
+                "https://raw.githubusercontent.com/MikeDominic92/okta-sso-hub/master/docs/screenshots/okta_provisioning_1764620505660.png"
+            ]
         },
         {
             title: "AI Access Sentinel",
@@ -111,7 +163,14 @@ const Projects = () => {
                 "Logic App Block"
             ],
             tech: ["Python", "scikit-learn", "Azure AD", "Logic Apps"],
-            githubUrl: "https://github.com/MikeDominic92/ai-access-sentinel"
+            githubUrl: "https://github.com/MikeDominic92/ai-access-sentinel",
+            screenshots: [
+                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/anomalies_page_1764611111831.png",
+                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/risk_page_1764611125945.png",
+                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/roles_page_1764611139665.png",
+                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/predictions_page_after_1764611160549.png",
+                "https://raw.githubusercontent.com/MikeDominic92/ai-access-sentinel/master/docs/screenshots/settings_page_1764611175580.png"
+            ]
         }
     ];
 
@@ -141,72 +200,106 @@ const Projects = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="group relative cursor-pointer"
-                            onMouseEnter={() => setIsHovered(true)}
-                            onMouseLeave={() => setIsHovered(false)}
+                            onMouseEnter={() => {
+                                setIsHovered(true);
+                                setHoveredProjectIndex(index);
+                            }}
+                            onMouseLeave={() => {
+                                setIsHovered(false);
+                                setHoveredProjectIndex(null);
+                            }}
                             onDoubleClick={() => window.open(project.githubUrl, '_blank')}
                         >
                             <div className="absolute -inset-0.5 bg-gradient-to-r from-terminal-green/20 to-purple-500/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
-                            <div className="relative h-full bg-black/80 backdrop-blur-md border border-white/10 p-6 rounded-lg flex flex-col">
-                                {/* Header */}
-                                <div className="flex justify-between items-start mb-4">
-                                    <div className="p-2 bg-terminal-green/10 rounded-md border border-terminal-green/20">
-                                        <Shield className="w-6 h-6 text-terminal-green" />
-                                    </div>
-                                    <span className="text-[10px] font-bold px-2 py-1 rounded bg-white/5 text-white/60 border border-white/10">
-                                        {project.status}
-                                    </span>
-                                </div>
+                            <div className="relative h-full bg-black/80 backdrop-blur-md border border-white/10 p-6 rounded-lg flex flex-col overflow-hidden">
+                                {/* Background Slideshow */}
+                                <AnimatePresence mode="wait">
+                                    {hoveredProjectIndex === index && project.screenshots && project.screenshots.length > 0 && (
+                                        <motion.div
+                                            key={currentScreenshotIndex}
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 0.15 }}
+                                            exit={{ opacity: 0 }}
+                                            transition={{ duration: 0.5 }}
+                                            className="absolute inset-0 z-0"
+                                        >
+                                            <img
+                                                src={project.screenshots[currentScreenshotIndex]}
+                                                alt="Project Screenshot"
+                                                className="w-full h-full object-cover"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
 
-                                {/* Title */}
-                                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-terminal-green transition-colors">
-                                    {project.title}
-                                </h3>
-                                <div className="text-xs text-terminal-green mb-4 font-mono">
-                                    &lt;{project.category} /&gt;
-                                </div>
-
-                                {/* Description */}
-                                <p className="text-sm text-white/70 mb-6 leading-relaxed flex-grow">
-                                    {project.description}
-                                </p>
-
-                                {/* Architecture List */}
-                                <div className="mb-6 space-y-2">
-                                    <div className="text-xs text-white/40 uppercase tracking-wider mb-2">Architecture</div>
-                                    {project.architecture.map((item, i) => (
-                                        <div key={i} className="flex items-center gap-2 text-xs text-white/80">
-                                            <GitBranch className="w-3 h-3 text-terminal-green/50" />
-                                            <span>{item}</span>
+                                {/* Content */}
+                                <div className="relative z-10 flex flex-col h-full">
+                                    {/* Header */}
+                                    <div className="flex justify-between items-start mb-4">
+                                        <div className="p-2 bg-terminal-green/10 rounded-md border border-terminal-green/20">
+                                            <Shield className="w-6 h-6 text-terminal-green" />
                                         </div>
-                                    ))}
-                                </div>
-
-                                {/* Tech Stack */}
-                                <div className="flex gap-2 mb-4">
-                                    {project.tech.map((tech, i) => (
-                                        <span key={i} className="text-[10px] px-2 py-1 rounded bg-white/5 text-white/40 border border-white/5">
-                                            {tech}
+                                        <span className="text-[10px] font-bold px-2 py-1 rounded bg-white/5 text-white/60 border border-white/10">
+                                            {project.status}
                                         </span>
-                                    ))}
-                                </div>
+                                    </div>
 
-                                <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
-                                    <button
-                                        onClick={() => setSelectedProject(project)}
-                                        className="flex items-center gap-2 text-sm text-white hover:text-terminal-green transition-colors group/btn"
-                                    >
-                                        <Server className="w-4 h-4" />
-                                        <span>View Architecture</span>
-                                    </button>
-                                    <a
-                                        href={project.githubUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-white/20 hover:text-white transition-colors"
-                                    >
-                                        <ExternalLink className="w-4 h-4" />
-                                    </a>
+                                    {/* Title */}
+                                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-terminal-green transition-colors">
+                                        {project.title}
+                                    </h3>
+                                    <div className="text-xs text-terminal-green mb-4 font-mono">
+                                        &lt;{project.category} /&gt;
+                                    </div>
+
+                                    {/* Description */}
+                                    <p className="text-sm text-white/70 mb-6 leading-relaxed flex-grow">
+                                        {project.description}
+                                    </p>
+
+                                    {/* Architecture List */}
+                                    <div className="mb-6 space-y-2">
+                                        <div className="text-xs text-white/40 uppercase tracking-wider mb-2">Architecture</div>
+                                        {project.architecture.map((item, i) => (
+                                            <div key={i} className="flex items-center gap-2 text-xs text-white/80">
+                                                <GitBranch className="w-3 h-3 text-terminal-green/50" />
+                                                <span>{item}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    {/* Tech Stack */}
+                                    <div className="flex gap-2 mb-4">
+                                        {project.tech.map((tech, i) => (
+                                            <span key={i} className="text-[10px] px-2 py-1 rounded bg-white/5 text-white/40 border border-white/5">
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
+                                        <button
+                                            onClick={() => setSelectedProject(project)}
+                                            onDoubleClick={(e) => {
+                                                e.stopPropagation(); // Prevent card double-click
+                                                setSelectedProject({ ...project, showScreenshots: true });
+                                            }}
+                                            className="flex items-center gap-2 text-sm text-white hover:text-terminal-green transition-colors group/btn"
+                                        >
+                                            <Server className="w-4 h-4" />
+                                            <span>View Architecture</span>
+                                        </button>
+                                        <a
+                                            href={project.githubUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-white/20 hover:text-white transition-colors"
+                                        >
+                                            <ExternalLink className="w-4 h-4" />
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

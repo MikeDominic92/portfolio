@@ -1,8 +1,8 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Server, Shield, Globe, Database, Lock, ArrowRight, Cpu } from 'lucide-react';
+import { X, Server, Shield, Globe, Database, Lock, ArrowRight, Cpu, ImageIcon, Maximize2 } from 'lucide-react';
 
 interface CaseStudyModalProps {
     isOpen: boolean;
@@ -15,10 +15,14 @@ interface CaseStudyModalProps {
         solution: string;
         architecture: string[]; // List of components for the diagram
         tech: string[];
+        screenshots?: string[];
+        showScreenshots?: boolean;
     } | null;
 }
 
 const CaseStudyModal = ({ isOpen, onClose, project }: CaseStudyModalProps) => {
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
     if (!project) return null;
 
     return (
@@ -39,7 +43,7 @@ const CaseStudyModal = ({ isOpen, onClose, project }: CaseStudyModalProps) => {
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: 20 }}
                             onClick={(e) => e.stopPropagation()}
-                            className="bg-[#0a0a0a] border border-terminal-green/30 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-lg shadow-[0_0_50px_rgba(57,255,20,0.1)] relative scrollbar-thin scrollbar-thumb-terminal-green/20 scrollbar-track-transparent"
+                            className="bg-[#0a0a0a] border border-terminal-green/30 w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-lg shadow-[0_0_50px_rgba(57,255,20,0.1)] relative scrollbar-thin scrollbar-thumb-terminal-green/20 scrollbar-track-transparent"
                         >
                             {/* Close Button */}
                             <button
@@ -99,6 +103,34 @@ const CaseStudyModal = ({ isOpen, onClose, project }: CaseStudyModalProps) => {
                                     </div>
                                 </div>
 
+                                {/* Screenshots Gallery */}
+                                {project.screenshots && project.screenshots.length > 0 && (
+                                    <div id="screenshots-section">
+                                        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                            <ImageIcon className="w-5 h-5 text-terminal-green" />
+                                            Interface Gallery
+                                        </h3>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            {project.screenshots.map((shot, index) => (
+                                                <div
+                                                    key={index}
+                                                    className="group relative aspect-video bg-black/50 border border-white/10 rounded-lg overflow-hidden cursor-pointer hover:border-terminal-green/50 transition-colors"
+                                                    onClick={() => setSelectedImage(shot)}
+                                                >
+                                                    <img
+                                                        src={shot}
+                                                        alt={`${project.title} screenshot ${index + 1}`}
+                                                        className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                                                    />
+                                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
+                                                        <Maximize2 className="w-8 h-8 text-white drop-shadow-lg" />
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                     {/* The Challenge */}
                                     <div>
@@ -137,6 +169,29 @@ const CaseStudyModal = ({ isOpen, onClose, project }: CaseStudyModalProps) => {
                             </div>
                         </motion.div>
                     </motion.div>
+
+                    {/* Image Lightbox */}
+                    {selectedImage && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setSelectedImage(null)}
+                            className="fixed inset-0 bg-black/95 z-[60] flex items-center justify-center p-4"
+                        >
+                            <button
+                                onClick={() => setSelectedImage(null)}
+                                className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors"
+                            >
+                                <X className="w-8 h-8" />
+                            </button>
+                            <img
+                                src={selectedImage}
+                                alt="Full size preview"
+                                className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl border border-white/10"
+                            />
+                        </motion.div>
+                    )}
                 </>
             )}
         </AnimatePresence>
