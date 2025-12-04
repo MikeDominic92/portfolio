@@ -23,16 +23,16 @@ const InteractiveTerminal = () => {
         'about.txt': (
             <div className="space-y-4 text-white/90 leading-relaxed">
                 <div>
-                    <span className="text-terminal-green font-bold block mb-1">01_ORIGIN_STORY.LOG</span>
-                    <p>It started with necessity. As a first-generation immigrant kid, I couldn't afford new tech, so I built my own from scraps. But hardware was just the start. I taught myself to code by writing bots to farm items and complete quests in MMORPGs while I was at school. I wasn't just playing games; I was reverse-engineering them, understanding memory offsets and packet structures. That thrill of bending a system to my will was my first taste of engineering.</p>
+                    <span className="text-terminal-green font-bold block mb-1">01_PROFESSIONAL_SUMMARY.LOG</span>
+                    <p>Cybersecurity Engineer with 10+ years in Cybersecurity and Technical Support, specializing in Identity & Access Management. Hands-on experience with AWS IAM, Entra ID, Active Directory, and access governance. Focused on Zero Trust architecture, privileged access management, and cloud identity security.</p>
                 </div>
                 <div>
-                    <span className="text-terminal-green font-bold block mb-1">02_THE_PIVOT.LOG</span>
-                    <p>Life took a detour into entrepreneurship, and I spent years building a successful restaurant business. Then COVID hit. I was forced to close my doors, losing everything I had built. But in that silence, I found clarity. I returned to my first love: code. I didn't go to a bootcamp; I locked myself in a room and relearned everything, treating my self-education like a full-time job. That resilience, the ability to rebuild from zero, is what I bring to every challenge.</p>
+                    <span className="text-terminal-green font-bold block mb-1">02_CURRENT_ROLE.LOG</span>
+                    <p>Currently enforcing Least Privilege access models using SailPoint IdentityIQ and AWS IAM Access Analyzer. Configuring Identity Threat Detection and Response (ITDR) rules in CrowdStrike Falcon to detect compromised credentials, impossible travel anomalies, and lateral movement patterns. Investigating access-related incidents using Splunk SIEM.</p>
                 </div>
                 <div>
-                    <span className="text-terminal-green font-bold block mb-1">03_CURRENT_STATE.LOG</span>
-                    <p>Now, I'm not just writing code; I'm securing it. I leverage my background in automation and my 'hacker mindset' to anticipate threats before they happen. I'm an early adopter of AI, using it to build self-healing identity fabrics that adapt faster than attackers can evolve. I don't just follow frameworks; I innovate within them to create security that enables speed rather than blocking it.</p>
+                    <span className="text-terminal-green font-bold block mb-1">03_AI_INTEGRATION.LOG</span>
+                    <p>Integrating AI/ML for identity threat detection, anomaly-based risk scoring, and intelligent access analytics. Building portfolio projects that demonstrate enterprise-grade CIEM, ITDR, PAM, and IGA solutions with machine learning capabilities.</p>
                 </div>
             </div>
         ),
@@ -40,10 +40,11 @@ const InteractiveTerminal = () => {
             <div className="space-y-1 text-terminal-green">
                 <p>{`{`}</p>
                 <div className="pl-4 text-white">
-                    <p>"cloud": ["AWS", "GCP", "Azure"],</p>
-                    <p>"identity": ["Okta", "Auth0", "SailPoint"],</p>
-                    <p>"code": ["Python", "TypeScript", "Terraform"],</p>
-                    <p>"security": ["Zero Trust", "OAuth/OIDC", "Threat Modeling"]</p>
+                    <p>"identity_platforms": ["Entra ID", "Active Directory", "Okta", "AWS IAM", "GCP IAM", "SailPoint"],</p>
+                    <p>"authentication": ["SSO", "MFA", "OAuth 2.0", "OIDC", "SAML 2.0", "SCIM", "FIDO2"],</p>
+                    <p>"pam": ["CyberArk", "HashiCorp Vault", "JIT Access", "Credential Rotation"],</p>
+                    <p>"automation": ["Python", "Boto3", "PowerShell", "Terraform", "AI/ML Analytics"],</p>
+                    <p>"security": ["Zero Trust", "NIST 800-53", "ISO 27001", "SOC 2", "ITDR"]</p>
                 </div>
                 <p>{`}`}</p>
             </div>
@@ -52,26 +53,46 @@ const InteractiveTerminal = () => {
             <div className="space-y-2">
                 <div className="flex items-center gap-2">
                     <Shield className="w-4 h-4 text-terminal-green" />
-                    <span className="text-white font-bold">Zero Trust Gatekeeper</span>
-                    <span className="text-xs text-gray-500">[DEPLOYED]</span>
+                    <span className="text-white font-bold">ZeroTrust IAM Analyzer</span>
+                    <span className="text-xs text-gray-500">[CIEM - AWS/GCP]</span>
+                </div>
+                <div className="flex items-center gap-2">
+                    <Shield className="w-4 h-4 text-terminal-green" />
+                    <span className="text-white font-bold">AI Access Sentinel</span>
+                    <span className="text-xs text-gray-500">[ITDR - CrowdStrike]</span>
                 </div>
                 <div className="flex items-center gap-2">
                     <Shield className="w-4 h-4 text-terminal-green" />
                     <span className="text-white font-bold">IAM Immune System</span>
-                    <span className="text-xs text-gray-500">[ACTIVE]</span>
+                    <span className="text-xs text-gray-500">[IGA - SailPoint]</span>
+                </div>
+                <div className="flex items-center gap-2">
+                    <Shield className="w-4 h-4 text-terminal-green" />
+                    <span className="text-white font-bold">Entra ID Governance</span>
+                    <span className="text-xs text-gray-500">[IGA - Splunk]</span>
                 </div>
                 <div className="flex items-center gap-2">
                     <Shield className="w-4 h-4 text-terminal-green" />
                     <span className="text-white font-bold">Keyless Kingdom</span>
-                    <span className="text-xs text-gray-500">[PRODUCTION]</span>
+                    <span className="text-xs text-gray-500">[OIDC Federation]</span>
                 </div>
-                <p className="text-gray-500 text-xs mt-2">Type 'cat projects.log' to see details or scroll down to the Projects section.</p>
+                <div className="flex items-center gap-2">
+                    <Shield className="w-4 h-4 text-terminal-green" />
+                    <span className="text-white font-bold">PAM Vault Lab</span>
+                    <span className="text-xs text-gray-500">[PAM - Vault/AWS]</span>
+                </div>
+                <div className="flex items-center gap-2">
+                    <Shield className="w-4 h-4 text-terminal-green" />
+                    <span className="text-white font-bold">Okta SSO Hub</span>
+                    <span className="text-xs text-gray-500">[SSO - SAML/OIDC]</span>
+                </div>
+                <p className="text-gray-500 text-xs mt-2">Scroll down to Projects section for details.</p>
             </div>
         ),
         'contact.md': (
             <div className="text-white">
                 <p>Email: <a href="mailto:DominicMH@pm.me" className="text-terminal-green hover:underline">DominicMH@pm.me</a></p>
-                <p>GitHub: <a href="https://github.com/mikedominic" target="_blank" rel="noopener noreferrer" className="text-terminal-green hover:underline">github.com/mikedominic</a></p>
+                <p>GitHub: <a href="https://github.com/MikeDominic92" target="_blank" rel="noopener noreferrer" className="text-terminal-green hover:underline">github.com/MikeDominic92</a></p>
             </div>
         )
     };

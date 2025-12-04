@@ -63,10 +63,10 @@ const Hero = () => {
 
                             <div className="space-y-4 max-w-2xl">
                                 <h2 className="text-2xl md:text-3xl text-white font-light tracking-wide">
-                                    AI Cybersecurity Engineer
+                                    Cybersecurity Engineer | IAM Specialist
                                 </h2>
                                 <p className="text-lg text-white/60 leading-relaxed font-light border-l-2 border-terminal-green/30 pl-6">
-                                    Architecting <span className="text-white">intelligent identity governance</span> & <span className="text-white">automated threat defense</span> for the decentralized web.
+                                    10+ years in <span className="text-white">Cybersecurity & Technical Support</span>, specializing in <span className="text-white">Identity & Access Management</span>. Integrating AI/ML for identity threat detection and intelligent access analytics.
                                 </p>
                                 <div className="pt-4">
                                     <a

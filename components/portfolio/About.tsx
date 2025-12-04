@@ -104,7 +104,11 @@ const About = () => {
                                             { name: "Azure Security Engineer (AZ-500)", id: "MS-AZ500", status: "VERIFIED" },
                                             { name: "GCP Professional Cloud Security Engineer", id: "GCP-PCSE", status: "VERIFIED" },
                                             { name: "AWS Certified Security - Specialty", id: "AWS-SCS", status: "VERIFIED" },
-                                            { name: "SailPoint IdentityIQ Associate", id: "IIQ-ASSOC", status: "VERIFIED" }
+                                            { name: "CyberArk Defender PAM", id: "CYBRK-PAM", status: "VERIFIED" },
+                                            { name: "Okta Certified Professional", id: "OKTA-CP", status: "VERIFIED" },
+                                            { name: "SailPoint IdentityIQ Associate", id: "IIQ-ASSOC", status: "VERIFIED" },
+                                            { name: "CompTIA Security+", id: "SEC-PLUS", status: "VERIFIED" },
+                                            { name: "Cisco CCNA", id: "CCNA", status: "VERIFIED" }
                                         ].map((cert, i) => (
                                             <div key={i} className="flex items-center gap-3 text-white/90 p-1.5 hover:bg-white/5 rounded transition-colors group border-l-2 border-transparent hover:border-terminal-green">
                                                 <span className="text-white/30 font-mono text-[10px] w-6">[{i}]</span>
