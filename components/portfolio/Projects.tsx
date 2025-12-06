@@ -173,18 +173,18 @@ const Projects = () => {
         {
             title: "Keyless Kingdom",
             category: "DevSecOps Zero Trust",
-            status: "v1.0",
-            description: "Eliminated long-lived service account keys using Workload Identity Federation. GitHub Actions OIDC provider exchanges JWT tokens for short-lived GCP credentials. Terraform deploys infrastructure with zero secrets to manage.",
-            challenge: "Managing long-lived Service Account JSON keys for CI/CD pipelines was a security nightmare. Keys were often leaked in git history or left on developer machines.",
-            solution: "Eliminated long-lived keys entirely using Workload Identity Federation. GitHub Actions exchanges its OIDC token for short-lived Google Cloud access tokens. No secrets to manage or leak. Access granted based on specific repository and branch.",
+            status: "v1.1",
+            description: "Multi-cloud workload identity federation with zero secrets. OIDC authentication across AWS, GCP, and Azure. Includes Chainguard Images integration and Sigstore/Cosign keyless signing for supply chain security with SLSA provenance.",
+            challenge: "Managing long-lived service account keys for CI/CD is a security nightmare. Keys leak in git history, never rotate, and grant broad permissions. Supply chain attacks are increasing.",
+            solution: "Eliminated credentials entirely with OIDC federation across all major clouds. Added Chainguard zero-CVE images and Sigstore keyless signing for container attestation. Short-lived tokens, fine-grained permissions, complete audit trail.",
             architecture: [
-                "GitHub Action OIDC Token",
-                "GCP Workload Identity Pool",
-                "Token Exchange Service",
-                "Short-lived Access Token",
-                "Terraform Infrastructure Deploy"
+                "GitHub Actions OIDC Token",
+                "AWS/GCP/Azure Federation",
+                "Sigstore Cosign Keyless Signing",
+                "Chainguard Images Integration",
+                "SLSA Provenance Generation"
             ],
-            tech: ["OIDC", "GitHub Actions", "Terraform", "GCP WIF"],
+            tech: ["OIDC", "GitHub Actions", "Terraform", "Sigstore", "Chainguard"],
             githubUrl: "https://github.com/MikeDominic92/keyless-kingdom",
             screenshots: [
                 "https://raw.githubusercontent.com/MikeDominic92/keyless-kingdom/master/docs/images/federation-overview-new.png",
